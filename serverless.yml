@@ -18,3 +18,4 @@ functions:
       DB_USER: ${file(serverless.env.yml):DB_USER}
       DB_PW: ${file(serverless.env.yml):DB_PW}
       DB_NAME: ${file(serverless.env.yml):DB_NAME}
+      OPENAI_API_KEY: ${file(serverless.env.yml):OPENAI_API_KEY}

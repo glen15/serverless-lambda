@@ -1,0 +1,20 @@
+service: YOUR LAMBDA NAME
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-northeast-2
+
+functions:
+  api:
+    handler: index.handler
+    url:
+      cors: true
+    timeout: 900
+    memorySize: 1024
+    environment: # serverless.env.yml에 정의한 환경 변수를 여기에 등록
+      DB_HOST: ${file(serverless.env.yml):DB_HOST}
+      DB_USER: ${file(serverless.env.yml):DB_USER}
+      DB_PW: ${file(serverless.env.yml):DB_PW}
+      DB_NAME: ${file(serverless.env.yml):DB_NAME}
